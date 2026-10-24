@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Universal Quiz AI",
+  "version": "1.0.0",
+  "description": "Scan a selected quiz area and read its webpage text.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*"
+  ],
+  "action": {
+    "default_title": "Universal Quiz AI",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

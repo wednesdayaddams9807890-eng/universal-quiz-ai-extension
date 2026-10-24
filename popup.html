@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Universal Quiz AI</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 350px;
+      margin: 0;
+      padding: 18px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #f5f5f5;
+      background: #080808;
+    }
+
+    .header {
+      text-align: center;
+      padding: 8px 0 20px;
+    }
+
+    .logo {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 12px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      font-size: 29px;
+      color: #080808;
+      background: linear-gradient(135deg, #d9ff00, #65ff9a);
+      box-shadow: 0 0 22px #b6ff0033;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 21px;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      margin: 7px 0 0;
+      font-size: 12px;
+      color: #999999;
+    }
+
+    button {
+      width: 100%;
+      border: 1px solid #292929;
+      border-radius: 12px;
+      padding: 13px;
+      margin-bottom: 11px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.15);
+    }
+
+    button:disabled {
+      opacity: .6;
+      cursor: wait;
+      transform: none;
+    }
+
+    #scanBtn {
+      color: #080808;
+      border: none;
+      background: linear-gradient(90deg, #d9ff00, #65ff9a);
+      box-shadow: 0 4px 18px #b6ff0022;
+    }
+
+    #answerBtn {
+      color: #d9ff00;
+      border: 1px solid #a7c900;
+      background: #151515;
+    }
+
+    .status-card,
+    .text-card,
+    .answer-card {
+      margin-bottom: 13px;
+      padding: 14px;
+      border: 1px solid #292929;
+      border-radius: 14px;
+      background: #121212;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      color: #d9ff00;
+      text-transform: uppercase;
+    }
+
+    #status {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #bdbdbd;
+      overflow-wrap: anywhere;
+    }
+
+    #scannedText,
+    #answerBox {
+      max-height: 145px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #e5e5e5;
+    }
+
+    #answerBox {
+      color: #d9ff00;
+    }
+
+    .footer {
+      text-align: center;
+      padding-top: 4px;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: #666666;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo">🧠</div>
+    <h2>Universal Quiz AI</h2>
+    <p class="subtitle">SMART SCANNING · INSTANT AI</p>
+  </div>
+
+  <button id="scanBtn">🔍 Scan Quiz Area</button>
+  <button id="answerBtn">✨ Get AI Answer</button>
+
+  <div class="status-card">
+    <h3 class="section-title">● System Status</h3>
+    <p id="status">Ready to scan your quiz.</p>
+  </div>
+
+  <div class="text-card">
+    <h3 class="section-title">📄 Scanned Text</h3>
+    <div id="scannedText">No text scanned yet.</div>
+  </div>
+
+  <div class="answer-card">
+    <h3 class="section-title">✨ AI Answer</h3>
+    <div id="answerBox">Your suggested answer will appear here.</div>
+  </div>
+
+  <div class="footer">POWERED BY AI · UNIVERSAL QUIZ AI</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
